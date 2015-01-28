@@ -76,7 +76,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\Gruntfile.js" (
   pushd "%DEPLOYMENT_TARGET%"
   call :ExecuteCmd !NPM_CMD! install grunt-cli
   IF !ERRORLEVEL! NEQ 0 goto error
-  ./node_modules/.bin/grunt --no-color clean common dist  
+  node node_modules\grunt\lib\grunt.js --no-color clean common dist  
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
