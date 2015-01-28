@@ -66,7 +66,7 @@ goto :EOF
 :: ----------
 
 :Deployment
-echo Running Grunt.
+@echo on
 
 :: Select node version
 call :SelectNodeVersion
@@ -80,6 +80,8 @@ IF EXIST "%DEPLOYMENT_TARGET%\Gruntfile.js" (
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
+
+@echo off
 
 goto end
 
