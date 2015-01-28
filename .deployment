@@ -1,2 +1,3 @@
 [config]
 project = Dlnz.Blog.Web
+SCM_POST_DEPLOYMENT_ACTIONS_PATH = deployment\postdeploymentactions
