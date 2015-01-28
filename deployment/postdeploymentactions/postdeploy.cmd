@@ -4,7 +4,7 @@
 IF EXIST "%DEPLOYMENT_TARGET%\Gruntfile.js" (
   pushd "%DEPLOYMENT_TARGET%"
   ::@echo on
-  grunt --no-color clean common dist  
+  grunt --no-color
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
