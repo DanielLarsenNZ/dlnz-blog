@@ -66,7 +66,6 @@ goto :EOF
 :: ----------
 
 :Deployment
-@echo on
 
 :: Select node version
 call :SelectNodeVersion
@@ -76,7 +75,8 @@ IF EXIST "%DEPLOYMENT_TARGET%\Gruntfile.js" (
   pushd "%DEPLOYMENT_TARGET%"
   :: call :ExecuteCmd !NPM_CMD! install grunt-cli
   :: IF !ERRORLEVEL! NEQ 0 goto error
-  node_modules\grunt\lib\grunt --no-color clean common dist  
+  @echo on
+  node node_modules\grunt\lib\grunt --no-color clean common dist  
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
