@@ -9,8 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.deployment = .deployment
 		.gitignore = .gitignore
+		deployment\postdeploymentactions\1-npm-install-grunt.cmd = deployment\postdeploymentactions\1-npm-install-grunt.cmd
+		deployment\postdeploymentactions\2-npm-install.cmd = deployment\postdeploymentactions\2-npm-install.cmd
+		deployment\postdeploymentactions\3-grunt.cmd = deployment\postdeploymentactions\3-grunt.cmd
 		LICENSE = LICENSE
-		deployment\postdeploymentactions\postdeploy.cmd = deployment\postdeploymentactions\postdeploy.cmd
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
