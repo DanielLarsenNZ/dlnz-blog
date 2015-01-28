@@ -22,3 +22,4 @@ exit /b 1
 
 :end
 @echo off
+exit /b 0
