@@ -6,6 +6,12 @@
 
 # Hello World! _A static website/blog with Azure, GitHub and Grunt._
 
+I am a big fan of static content management systems like GitHub.io and Jekyll and what was hoping to learn through writing this blog was how I could implement a simlar system using tools that are familiar to me (Windows OS, Visual Studio, Azure Websites). What I discovered was so much more. What you are reading right now (on www.daniellarsen.nz) is a website that is served 100% from CDN. As long as I get my client-side optimisation right (minification, bundling and other optimisations) my site performance should start to approach the bare metal of the CDN infrastructure. In other words, my website performance is now being tuned by the Azure CDN infrastructure team, and I'm cool with that.
+
+My other pleasent discovery was Visual Studio Online (Monaco). I've been using it and demonstrating it for ages but what really clicked this time was that I can edit, preview and publish my content from Visual Studio Online running in my browser (as well as GitHub.com, Visual Studio, Notepad++, etc) and then push my changes back to my dlnz-blog repo.
+
+_(WIP)_
+
 It's great to be blogging again and what better way to kick it off than with a how-to roll-your-own blog site. I know what 
 you're thinking... just what the world needs, another Blog engine 101. Well this is not that - This is some cool
 new-ish technologies working together to meet some target conditions, which are:
@@ -13,18 +19,6 @@ new-ish technologies working together to meet some target conditions, which are:
 ## Mission<sup>1</sup>
 
 _A rich, performant blog-site that will scale and extend._
-
-
-#Tables  
-
-column A | column B
-|:-------|:-------|
-aaa | bbb
-ccc | ddd
-eee | fff
-
-
-hello
 
 
 Target condition | Why | How 
