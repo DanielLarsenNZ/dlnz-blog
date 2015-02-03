@@ -7,4 +7,5 @@ packages
 Thumbs.db
 node_modules
 Dlnz.Blog.Web/blogs/*.html
+Dlnz.Blog.Web/index.html
 _archive
