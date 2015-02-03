@@ -73,6 +73,10 @@ h6, .h6 {
   border-left: 5px solid transparent;
 }
 
+.banner{
+    background: content-box url(/images/studio_lg.jpg) no-repeat;
+}
+
 
 /*
  * Blog name and description
@@ -149,6 +153,39 @@ h6, .h6 {
   color: #999;
 }
 
+.blog-post img {
+    width:616px;
+}
+
+.blog-post h2 {
+    padding-top:20px;
+}
+
+.blog-post h3 {
+    padding-top:20px;
+}
+
+.blog-post table{
+    border:1px solid #e5e5e5;
+    border-collapse:collapse;
+    font-size:0.9em;
+}
+
+.blog-post table tr{
+    border:1px solid #e5e5e5;
+}
+
+.blog-post table th{
+    background-color:#e5e5e5;
+    padding:4px;
+    vertical-align:top;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.blog-post table td{
+    padding:4px;
+    vertical-align:top;
+}
 
 /*
  * Footer

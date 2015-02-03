@@ -1,4 +1,5 @@
-﻿module.exports = function (grunt) {
+/// <binding AfterBuild='zetzer:main' />
+module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -15,20 +16,17 @@
         zetzer: {
             main: {
                 options: {
-                    env: {
-                        title: "Daniel Larsen NZ",
-                    },
-                    partials: "partials",
+//                    partials: "",
                     templates: "templates"
                 },
                 files: [
                   {
                       expand: true,
-                      cwd: "blogs/",
+                      cwd: "",
                       src: "**/*.md",
-                      dest: "blogs",
+                      dest: "",
                       ext: ".html",
-                      flatten: true
+                      flatten: false
                   }
                 ]
             },

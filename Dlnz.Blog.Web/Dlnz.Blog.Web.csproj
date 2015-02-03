@@ -61,10 +61,22 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Gruntfile.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\html5shiv.min.js" />
+    <Content Include="js\ie10-viewport-bug-workaround.js" />
+    <Content Include="js\jquery-1.11.2.min.js" />
+    <Content Include="js\respond.min.js" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
-    <Content Include="blogs\hello-world.md" />
+    <Content Include="index.md" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,14 +87,14 @@
   <ItemGroup>
     <Content Include="css\blog.css" />
     <Content Include="images\bilbao.jpg" />
-    <Content Include="index.html" />
-    <Content Include="templates\default.html" />
+    <Content Include="templates\index.dot.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="blogs\" />
     <Folder Include="partials\" />
   </ItemGroup>
   <PropertyGroup>
