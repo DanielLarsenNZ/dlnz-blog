@@ -60,5 +60,11 @@ My other pleasent discovery was Visual Studio Online (Monaco). I've been using i
 _(WIP) I am writing this Blog as I learn. [Follow me on Twitter][twitter_dan] and come back soon..._
 
 
+## Links to more info
+
+* [Azure CDN overview](http://azure.microsoft.com/en-us/documentation/articles/cdn-overview/)
+* [Integrate an Azure Website with Azure CDN](http://azure.microsoft.com/en-us/documentation/articles/cdn-websites-with-cdn/)
+
+
 [jekyll_pages]: https://help.github.com/articles/using-jekyll-with-pages/
 [twitter_dan]: https://twitter.com/daniellarsennz/
