@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{= it.document.description || ""}}">
+    <meta name="author" content="Daniel Larsen">
+    <meta name="x-dlnz-blog-page-version" content="{{= new Date().toString() }}" >
+    <meta name="x-dlnz-blog-page-template" content="{{= it.document.template }}">
+
+    <title>{{= it.document.title || "Dan's blog"}} - Daniel Larsen NZ</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="/css/blog.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/js/html5shiv.min.js"></script>
+      <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+      var appInsights=window.appInsights||function(config){
+      function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
+      }({
+          instrumentationKey:"88a594b9-bb5a-4143-ad94-8ab171f18dac"
+      });
+      window.appInsights=appInsights;
+      appInsights.trackPageView();
+    </script>
+  </head>
+  <body>
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="/index.html">Home</a>
+          <!--<a class="blog-nav-item" href="/about.html">About</a>-->
+          <!--<a class="blog-nav-item" href="/contact.html">Contact</a>-->
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="blog-header">
+        <h1 class="blog-title">@DanielLarsenNZ</h1>
+        <p class="lead blog-description">Technology and Software Blog.</p>
+      </div>
+ 
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          <div class="blog-post">
+            {{= it.document }}
+          </div>
+          <!-- 
+          <nav>
+            <ul class="pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+          -->
+        </div>
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            {{= it.include("about-sidebar")}}
+          </div>
+
+          <!--
+          <div class="sidebar-module">              
+              <h4>Archives</h4>
+                <ol class="list-unstyled">
+                  {{ for(var page in it.pages) { }}
+                    <li><a href="#">{{=it.pages[page]}}</a></li>
+                    {{ } }}
+                </ol>
+          </div>
+          -->
+
+          <div class="sidebar-module">
+            <h4>More</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/DanielLarsenNZ">GitHub</a></li>
+              <li><a href="https://twitter.com/DanielLarsenNZ">Twitter</a></li>
+              <li><a href="https://nz.linkedin.com/in/daniellarsennz/">Linked In</a></li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.<p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+    <script src="/js/jquery-1.11.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

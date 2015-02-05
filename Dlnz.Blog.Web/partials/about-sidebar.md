@@ -1,0 +1,1 @@
+﻿Daniel Larsen is a Software Developer, Mentor and Coach working with C#, .NET and DDD in an Agile environment. Interested in DevOps, Cloud Compute, Continuous Delivery and Scale. Passionate about Open Source, Music and loads of other things. Based in Auckland, New Zealand.

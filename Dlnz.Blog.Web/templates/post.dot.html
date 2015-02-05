@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{= it.document.description || ""}}">
     <meta name="author" content="Daniel Larsen">
-    <meta name="x-dlnz-blog-page-version" content="{{= new Date().toString() }}" >
+    <meta name="x-dlnz-blog-page-version" content="{{= new Date().toString() }}">
+    <meta name="x-dlnz-blog-page-template" content="{{= it.document.template }}">
 
     <title>{{= it.document.title || "Dan's blog"}} - Daniel Larsen NZ</title>
 
@@ -42,8 +43,8 @@
 
     <div class="container">
       <div class="blog-header">
-        <h1 class="blog-title">Daniel Larsen NZ</h1>
-        <p class="lead blog-description">A blog about building a Blog site.</p>
+        <h1 class="blog-title">@DanielLarsenNZ</h1>
+        <p class="lead blog-description">Technology and Software Blog.</p>
       </div>
  
       <div class="row">
@@ -64,8 +65,7 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>Software Developer on the .NET stack. Fascinated by C#, DDD and Agile. Interested in JavaScript, Cloud Compute and Scale. 
-                Passionate about Open Source, Music and loads of other things.</p>
+            {{= it.include("about-sidebar")}}
           </div>
 
           <!--

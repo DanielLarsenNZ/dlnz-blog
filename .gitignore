@@ -6,6 +6,6 @@ packages
 *.user
 Thumbs.db
 node_modules
-Dlnz.Blog.Web/blogs/*.html
+Dlnz.Blog.Web/posts/**/*.html
 Dlnz.Blog.Web/index.html
 _archive

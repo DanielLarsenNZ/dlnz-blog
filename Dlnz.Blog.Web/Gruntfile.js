@@ -16,20 +16,29 @@ module.exports = function (grunt) {
         zetzer: {
             main: {
                 options: {
-//                    partials: "",
+                    partials: "partials",
+                    templates: "templates"
+                },
+                files: [
+                    { src: ['posts/azure-websites/hello-world.md'], dest: 'index.html' }
+                ]
+            },
+            posts: {
+                options: {
+                    partials: "partials",
                     templates: "templates"
                 },
                 files: [
                   {
                       expand: true,
-                      cwd: "",
+                      cwd: "posts",
                       src: "**/*.md",
-                      dest: "",
+                      dest: "posts",
                       ext: ".html",
                       flatten: false
                   }
                 ]
-            },
+            }
         }
     });
 
@@ -37,8 +46,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-zetzer');
 
-
     // Default task(s).
     grunt.registerTask('default', ['zetzer']);
-
 };
