@@ -1,3 +1,3 @@
 # Dan's blog
 
-(WIP)
+Source and content for my Blog where I post about my experiments with code, music and electronics. Read all about it at http://www.daniellarsen.nz/
