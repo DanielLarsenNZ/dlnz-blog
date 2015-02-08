@@ -70,9 +70,9 @@ This website is hosted on a Free Azure Website but all content is served from CD
 * [Configuring Grunt Tasks](http://gruntjs.com/configuring-tasks)
 
 
-<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> **(WIP)** I am writing this post as I learn. [Follow me on Twitter][twitter_dan] and come back soon...</div>
+<div class="alert alert-warning" role="alert"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> **WIP** I am writing this post as I learn. <a href="https://twitter.com/daniellarsennz/" class="alert-link">Follow me on Twitter</a> and come back soon...</div>
 
-<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> [This content and source for this site is on GitHub](https://github.com/DanielLarsenNZ/dlnz-blog)</div>
+<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> [The content and source for this site is on GitHub](https://github.com/DanielLarsenNZ/dlnz-blog)</div>
 
 
 [template]: https://github.com/DanielLarsenNZ/dlnz-blog/blob/master/Dlnz.Blog.Web/templates/post.dot.html

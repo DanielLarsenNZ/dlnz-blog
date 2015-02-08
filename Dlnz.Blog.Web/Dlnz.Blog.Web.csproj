@@ -76,8 +76,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="partials\posts-sidebar.html" />
     <Content Include="posts\azure-websites\hello-world.md" />
-    <Content Include="partials\about-sidebar.md" />
+    <Content Include="partials\about-sidebar.html" />
     <Content Include="posts\azure-websites\performance-with-azure-cdn.md" />
     <Content Include="css\Web.config" />
     <None Include="css\Web.Debug.config">

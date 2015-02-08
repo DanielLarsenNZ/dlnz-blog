@@ -36,9 +36,9 @@ _Brazillian data starts at NZ$ 0.22c per GB. See [Azure CDN Pricing] and [Azure 
 I know what you are thinking: "Yeah right, but what does it _really_ cost?" For the answer to that come back soon as I work on the numbers and make observations from my experiment that you are reading right now.
 
 
-<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> **(WIP)** I am writing this post as I learn. [Follow me on Twitter][twitter_dan] and come back soon...</div>
+<div class="alert alert-warning" role="alert"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> **WIP** I am writing this post as I learn. <a href="https://twitter.com/daniellarsennz/" class="alert-link">Follow me on Twitter</a> and come back soon...</div>
 
-<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> [This content and source for this site is on GitHub](https://github.com/DanielLarsenNZ/dlnz-blog)</div>
+<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> [The content and source for this site is on GitHub](https://github.com/DanielLarsenNZ/dlnz-blog)</div>
 
 
 ### More about Azure CDN

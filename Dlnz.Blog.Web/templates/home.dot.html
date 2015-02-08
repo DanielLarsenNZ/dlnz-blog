@@ -63,21 +63,9 @@
         </div>
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            {{= it.include("about-sidebar")}}
-          </div>
+          {{= it.include("about-sidebar")}}
 
-          <!--
-          <div class="sidebar-module">              
-              <h4>Archives</h4>
-                <ol class="list-unstyled">
-                  {{ for(var page in it.pages) { }}
-                    <li><a href="#">{{=it.pages[page]}}</a></li>
-                    {{ } }}
-                </ol>
-          </div>
-          -->
+          {{= it.include("posts-sidebar")}}
 
           <div class="sidebar-module">
             <h4>More</h4>
