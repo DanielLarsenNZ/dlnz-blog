@@ -13,29 +13,30 @@ _5th February 2015_
 
 ## TL;DR
 
-I am a big fan of static content management systems like _[GitHub.io and Jekyll][jekyll_pages]_. I thought it would be interesting to try and emulate a similar static content generation story on Azure Websites, using a Visual Studio oriented toolset. I did it with [Grunt], [Zetzer] and GitHub deployment to an Azure Website. I use Azure CDN to keep CPU time down and improve performance.
+I'm a big fan of static content management systems like _[GitHub.io and Jekyll][jekyll_pages]_. I thought it would be interesting to try and emulate a similar static content generation story on Azure Websites, using a Visual Studio oriented toolset. I did it with [Grunt], [Zetzer] and GitHub deployment to an Azure Website. I use [Azure CDN] to keep CPU time down and improve performance.
 
 
 ## The solution
-
-Main components of the Solution:
 
 |Technology | What              | Why   |
 | ----      | ---               | ----- |
 | [Azure Website] | Cheap, scalable Web hosting platform with easy deployment and CDN stories. | Hosts the website and provides a platform for its deployment and maintenance. |
 | [GitHub]  | Web-based Git repository hosting service. | Excellent collaboration, editing and deployment story. |
 | [Kudu]    | Swiss army knife deployment tool for Azure Websites.  | Coolest library on the planet. |
-| [Grunt]   | Node.js/NPM based build task runner | To run post-deployment tasks on Azure Website |
-| [grunt-zetzer]  | Grunt-task for parsing Markdown to HTML | To generate static HTML from MD files and templates. |
+| [Grunt]   | Node.js/NPM based build task runner | To compile Markdown to HTML in Development Environment and at Deployment time. |
+| [grunt-zetzer]  | Grunt-task for compiling Markdown to HTML | To generate static HTML from Markdown files and HTML templates. |
 
+### Grunt
 
-I'm using [Grunt] to generate static posts and other pages (Home, Contact, About) at deployment time. My source controlled artefacts are posts and partials in the form of Markdown (.md) files and HTML [doT.js] template files. 
+I'm using [Grunt] to generate the site as static HTML at "build" time and at Deployment time. The posts are authored as Markdown (_.md_) files and are checked in to source control. Partials are _.html_ files containing reusable snippets. Templates are also .html files with templating markup in the form of [doT.js].
 
-**My authoring story is:** I compose my post in an _.md_ file in Visual Studio and save it to my posts folder. I hit F5 and [Task Runner Explorer] (now built-in to [Visual Studio 2015 Preview]) kicks off a grunt task ([grunt-zetzer]) which is bound to the _After-build_ IDE event. The grunt task compiles my post into an HTML file which has been styled by a [template]. Visual Studio opens a Browser window and I can now read the post as served by IIS Express.
+The power of Grunt is in the way [grunt tasks are configured], in particular the File abstraction of source to destination mapping. This suits the task of content generation really well. My rules in *[Gruntfile.js]* are very simple currently, but I am soon to unleash the power of filtering functions to dynamically determine where files are generated and how they are linked. This is possible because *Gruntfile.js* is a JavaScript file (not JSON). I can write JavaScript functions that determine which files are generated and where.
 
-**My deployment story is:** I add and commit my blog post _.md_ file to my local git repo and push to master on GitHub. I _.gitignore_' the .html files. The push webhook in GitHub triggers a deployment on my Azure Website. I have added a [Post Deployment Action] to my .deployment file to run the _grunt-zetzer_ task again on my Azure Website. The generated .html file sits side-by-side with the .md file, ready to be served by the website.
+**My authoring story is:** I compose my post in an _.md_ file in Visual Studio and save it to my posts folder. I hit [F5] and [Task Runner Explorer] (now built-in to [Visual Studio 2015 Preview]) kicks off a grunt task ([grunt-zetzer]) which is bound to the _After-build_ IDE event. The grunt task compiles my post into an *.html* file which has been styled by a [template]. Visual Studio opens a Browser window and I can now read the post as served by IIS Express.
 
-Why not commit and push the generated HTML as well? It keeps my push'es small and saves me having to remember to include the .html files in my Website Project (only files in the .csproj are deployed by default). Plus it is unbelievably cool that we can run grunt tasks on Azure Websites. At some stage in the future I may consider this strategy. 
+**My deployment story is:** I add and commit my blog post _.md_ file to my local git repo and push to master on GitHub. I _.gitignore_ the *.html* files. The push webhook in GitHub triggers a deployment on my Azure Website. I have added a [Post Deployment Action] to my *.deployment* file to run the grunt-zetzer task again on my Azure Website. The generated *.html* file sits side-by-side with the *.md* file and is what is served.
+
+Why not commit and push the generated HTML file as well? It keeps my push's small and saves me having to remember to include the *.html* files in my Website Project (only files in the *.csproj* are deployed by default). Plus it is unbelievably cool that we can run Grunt tasks on Azure Websites. At some stage in the future I may reconsider this strategy though.
 
 
 ### Zetzer
@@ -65,16 +66,14 @@ When you are ready for the big time you can graduate to a _Basic_ tier and host 
 
 This website is hosted on a Free Azure Website but all content is served from CDN. I get a custom domain name on my CDN endpoint so don't need a shared plan. I do pay CDN charges however and there are downsides. Read all about it in my next post, [Bare metal performance with Azure CDN].
 
-## More info
-
-* [Configuring Grunt Tasks](http://gruntjs.com/configuring-tasks)
-
 
 <div class="alert alert-warning" role="alert"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> **WIP** I am writing this post as I learn. <a href="https://twitter.com/daniellarsennz/" class="alert-link">Follow me on Twitter</a> and come back soon...</div>
 
 <div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> [The content and source for this site is on GitHub](https://github.com/DanielLarsenNZ/dlnz-blog)</div>
 
 
+[Gruntfile.js]: https://github.com/DanielLarsenNZ/dlnz-blog/blob/master/Dlnz.Blog.Web/Gruntfile.js
+[grunt tasks are configured]:http://gruntjs.com/configuring-tasks
 [template]: https://github.com/DanielLarsenNZ/dlnz-blog/blob/master/Dlnz.Blog.Web/templates/post.dot.html
 [Bare metal performance with Azure CDN]: /posts/azure-websites/performance-with-azure-cdn.html
 [jekyll_pages]: https://help.github.com/articles/using-jekyll-with-pages/
