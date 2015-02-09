@@ -63,6 +63,7 @@
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="google3f1a7681bfc06cce.html" />
     <Content Include="Gruntfile.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\html5shiv.min.js" />
