@@ -26,17 +26,24 @@ I'm a big fan of static content management systems like _[GitHub.io and Jekyll][
 | [Grunt]   | Node.js/NPM based build task runner | To compile Markdown to HTML in Development Environment and at Deployment time. |
 | [grunt-zetzer]  | Grunt-task for compiling Markdown to HTML | To generate static HTML from Markdown files and HTML templates. |
 
+
 ### Grunt
 
 I'm using [Grunt] to generate the site as static HTML at "build" time and at Deployment time. The posts are authored as Markdown (_.md_) files and are checked in to source control. Partials are _.html_ files containing reusable snippets. Templates are also .html files with templating markup in the form of [doT.js].
 
-The power of Grunt is in the way [grunt tasks are configured], in particular the File abstraction of source to destination mapping. This suits the task of content generation really well. My rules in *[Gruntfile.js]* are very simple currently, but I am soon to unleash the power of filtering functions to dynamically determine where files are generated and how they are linked. This is possible because *Gruntfile.js* is a JavaScript file (not JSON). I can write JavaScript functions that determine which files are generated and where.
+The power of Grunt is in the way [grunt tasks are configured], in particular the File abstraction of source to destination mapping. This suits the task of content generation really well. The rules in *[Gruntfile.js]* are very simple currently, but will become more complex as I unleash the power of filtering functions to dynamically determine where files are generated and how they are linked. This is possible because *Gruntfile.js* is a JavaScript file (not JSON). I can write JavaScript functions that determine which files are generated and where.
+
+<img data-original="/images/vs2015-Grunt-800.jpg" class="img-responsive img-thumbnail lazy" alt="Screenshot of Visual Studio 2015 Preview and Grunt Task Runner">
 
 **My authoring story is:** I compose my post in an _.md_ file in Visual Studio and save it to my posts folder. I hit [F5] and [Task Runner Explorer] (now built-in to [Visual Studio 2015 Preview]) kicks off a grunt task ([grunt-zetzer]) which is bound to the _After-build_ IDE event. The grunt task compiles my post into an *.html* file which has been styled by a [template]. Visual Studio opens a Browser window and I can now read the post as served by IIS Express.
 
-**My deployment story is:** I add and commit my blog post _.md_ file to my local git repo and push to master on GitHub. I _.gitignore_ the *.html* files. The push webhook in GitHub triggers a deployment on my Azure Website. I have added a [Post Deployment Action] to my *.deployment* file to run the grunt-zetzer task again on my Azure Website. The generated *.html* file sits side-by-side with the *.md* file and is what is served.
+**My deployment story is:** I add and commit my blog post _.md_ file to my local git repo and push to master on GitHub. I _.gitignore_ the *.html* files. The push webhook in GitHub triggers a deployment on my Azure Website. I have configured Post Deployment Actions to be run by adding a `SCM_POST_DEPLOYMENT_ACTIONS_PATH` setting to the *[.deployment]* file that Kudu looks for in the Project root. The actions are [*.cmd* files] that install Grunt and other dependencies then run the grunt-zetzer task on the Azure Website. The *.html* file is generated alongside the *.md* file.
 
 Why not commit and push the generated HTML file as well? It keeps my push's small and saves me having to remember to include the *.html* files in my Website Project (only files in the *.csproj* are deployed by default). Plus it is unbelievably cool that we can run Grunt tasks on Azure Websites. At some stage in the future I may reconsider this strategy though.
+
+[*.cmd* files]: https://github.com/DanielLarsenNZ/dlnz-blog/tree/master/deployment/postdeploymentactions
+[.deployment]: https://github.com/DanielLarsenNZ/dlnz-blog/blob/master/.deployment
+[Post Deployment Action]: https://github.com/projectkudu/kudu/wiki/Post-Deployment-Action-Hooks
 
 
 ### Zetzer
@@ -85,7 +92,6 @@ This website is hosted on a Free Azure Website but all content is served from CD
 [Task Runner Explorer]: http://www.hanselman.com/blog/IntroducingGulpGruntBowerAndNpmSupportForVisualStudio.aspx
 [Visual Studio 2015 Preview]: http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx
 [grunt-zetzer]: https://github.com/brainshave/grunt
-[Post Deployment Action]: https://github.com/projectkudu/kudu/wiki/Post-Deployment-Action-Hooks
 [GitHub]: https://github.com
 [Kudu]: https://github.com/projectkudu/kudu
 [www.daniellarsen.nz]: http://www.daniellarsen.nz/
