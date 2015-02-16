@@ -11,8 +11,7 @@
 
     <title>{{= it.document.title || "Dan's blog"}} - Daniel Larsen NZ</title>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link href="/css/blog.css" rel="stylesheet">
+    {{=it.include("head-css")}}
 
     {{=it.include("head-scripts")}}
   </head>

@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\magnific-popup.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="google3f1a7681bfc06cce.html" />
     <Content Include="Gruntfile.js" />
@@ -72,6 +73,7 @@
     <Content Include="js\ie10-viewport-bug-workaround.js" />
     <Content Include="js\jquery-1.11.2.min.js" />
     <Content Include="js\jquery.lazyload.min.js" />
+    <Content Include="js\jquery.magnific-popup.min.js" />
     <Content Include="js\respond.min.js" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
@@ -81,6 +83,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="partials\footer-scripts.html" />
+    <Content Include="partials\head-css.html" />
     <Content Include="partials\head-scripts.html" />
     <Content Include="partials\posts-sidebar.html" />
     <Content Include="posts\azure-websites\hello-world.md" />
@@ -125,7 +128,6 @@
     <Content Include="css\blog.css" />
     <Content Include="images\bilbao.jpg" />
     <Content Include="templates\post.dot.html" />
-    <Content Include="templates\home.dot.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
