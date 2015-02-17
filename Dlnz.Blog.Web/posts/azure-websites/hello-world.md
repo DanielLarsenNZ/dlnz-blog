@@ -29,7 +29,7 @@ I'm a big fan of static content management systems like _[GitHub.io and Jekyll][
 
 ## Grunt
 
-I'm using [Grunt] to generate the site as static HTML at "build" time and at Deployment time. The posts are authored as Markdown (_.md_) files and are checked in to source control. Partials are _.html_ files containing reusable snippets. Templates are also .html files with templating markup in the form of [doT.js].
+I'm using [Grunt] to generate the site as static HTML at "build" time and at Deployment time. The posts are authored as Markdown (_.md_) files and are checked in to source control. Partials are HTML files containing reusable snippets. Templates are also HTML files with templating markup in the form of [doT.js].
 
 The power of Grunt is in the way [grunt tasks are configured], in particular the File abstraction of source to destination mapping. This suits the task of content generation really well. The rules in *[Gruntfile.js]* are very simple currently, but will become more complex as I unleash the power of filtering functions to dynamically determine where files are generated and how they are linked. This is possible because *Gruntfile.js* is a JavaScript file (not JSON config). I can write JavaScript functions that determine which files are generated and where.
 
@@ -47,8 +47,37 @@ I compose a post in an _.md_ file in Visual Studio and save it to the posts fold
 
 Why not commit and push the generated HTML file as well? It keeps my pushes small and saves me having to remember to include the HTML files in my Website Project (only files in the *.csproj* are deployed by default). Plus it is pretty cool that we can run Grunt tasks on Azure Websites. At some stage in the future I may reconsider this strategy though.
 
+
+### Metadata
+Zetzer expects a JSON header that contains extra metadata about the document. This is the metadata for this post:
+
+```javascript
+{
+    "template": "post",
+    "title": "Hello World! A static website/blog with Azure, GitHub and Grunt",
+	"description": "I am a big fan of static content management systems like GitHub.io and Jekyll. I thought it would be interesting to try and emulate a similar static content generation story on Azure Websites, using a Visual Studio oriented toolset.",
+    "tags": ["azure-websites"]
+}
+```
+
+The metadata is accessible from within the document or template. For example, to dynamically set the HTML meta-description tag in the template:
+
+```
+<meta name="description" content="{{= it.document.description || ""}}">
+```
+
+The beauty of [doT.js] is that almost everything inside the curly braces is evaluated as JavaScript so you can easily coalesce `undefined` to `""`, and use language features like `Date`:
+
+```html
+<meta name="x-dlnz-blog-page-version" content="{{= new Date().toString() }}">
+```
+
+
 ### More info
 * [Post Deployment Action Hooks](https://github.com/projectkudu/kudu/wiki/Post-Deployment-Action-Hooks) (Project Kudu)
+* [Zetzer concepts](https://github.com/brainshave/zetzer#main-concepts) (Zetzer on GitHub)
+* [Introducing Gulp, Grunt, Bower, and npm support for Visual Studio](http://www.hanselman.com/blog/IntroducingGulpGruntBowerAndNpmSupportForVisualStudio.aspx) (Hanselman.com)
+* [Visual Studio 2015 Preview Downloads](http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx) (VisualStudio.com)
 
 
 [*.cmd* files]: https://github.com/DanielLarsenNZ/dlnz-blog/tree/master/deployment/postdeploymentactions
@@ -69,7 +98,7 @@ npm install -g grunt
 npm install grunt-zetzer
 ```
 
-Then configure _Gruntfile.js_ to run Zetzer by default in a way that suits your site. [For example], on this site I write my content in Markdown (.md files) and Zetzer generates HTML versions alongside them at Grunt time. Zetzer uses templates (in the templates folder) to add style.
+Then configure _Gruntfile.js_ to run Zetzer by default in a way that suits your site. [For example], on this site I write my content in Markdown (_.md_ files) and Zetzer generates HTML versions alongside them at Grunt time. Zetzer uses templates (in the templates folder) to add style.
 
 The main Zetzer task compiles static pages based on a src to dest list. For example, [line 23 of Gruntfile.js] specifies that _hello-world.md_ should be compiled to index.html (the Home page).
 
@@ -109,7 +138,7 @@ This website is hosted on a Free Azure Website but all content is served from CD
 [Azure CDN]: http://azure.microsoft.com/en-us/services/cdn/
 [Task Runner Explorer]: http://www.hanselman.com/blog/IntroducingGulpGruntBowerAndNpmSupportForVisualStudio.aspx
 [Visual Studio 2015 Preview]: http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx
-[grunt-zetzer]: https://github.com/brainshave/grunt
+[grunt-zetzer]: https://github.com/brainshave/grunt-zetzer
 [GitHub]: https://github.com
 [Kudu]: https://github.com/projectkudu/kudu
 [www.daniellarsen.nz]: http://www.daniellarsen.nz/
