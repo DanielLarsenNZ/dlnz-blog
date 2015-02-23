@@ -3,10 +3,12 @@
     <script src="/js/jquery.lazyload.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/js/highlight.pack.js"></script>
     <script type="text/javascript">
       $(function () {
         /* load event */
         $("img.lazy").lazyload();
         $('.image-link').magnificPopup({ type: 'image' });
+        hljs.initHighlightingOnLoad();
       });
     </script>

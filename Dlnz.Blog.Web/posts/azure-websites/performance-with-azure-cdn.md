@@ -78,6 +78,22 @@ www CNAME az714222.vo.msecnd.net  3600
 The A record is for redirection from the root to www (using a service provided by my registrar). The CNAME for www resolves to the CDN, not the Azure Website. Note that there is a TTL on the domain records as well. In this case the Domain TTL is one hour which gives a one hour turnaround should I change my mind and want to host on the Azure Website itself.
 
 
+## Show me the Metrics
+
+It's pretty hard to measure performance with a single digit daily visitor count. But, [Google Developers PageSpeed Insights] is a pretty good benchmark. 
+
+<a href="/images/baremetal-pagespeed-cold.jpg" class="image-link"><img data-original="/images/baremetal-pagespeed-cold.jpg" class="img-responsive img-thumbnail lazy" alt="Screenshot of Google PageSpeed"></a>
+
+The first time I run this brutally honest web performance analyser it gives a warning for a server response time of 1100ms (I've seen it complain at 470ms). This is because the site is completey cold. No one has hit it for over eight hours (please stop laughing) so the CDN performs an origin request that wakes up the storage on the (Free) Azure Website.
+
+<a href="/images/baremetal-pagespeed-warm.jpg" class="image-link"><img data-original="/images/baremetal-pagespeed-warm.jpg" class="img-responsive img-thumbnail lazy" alt="Screenshot of Google PageSpeed"></a>
+
+
+Wait 30 seconds (to expire PageSpeed's cache) and run it again and the warning goes away. It's fast and Google knows it. There is some work to do on bundling and minification, but otherwise, not a bad result. I am ready for some real traffic now to put it to the ultimate test.
+
+[Google Developers PageSpeed Insights]: https://developers.google.com/speed/pagespeed/insights/
+
+
 ## How much does it cost?
 
 The beauty of hosting from CDN is that (in this case) the Azure Website does not do any hosting, so a Free tier website is fine. The custom domain name is associated with the CDN, not the Azure Website so their is no Shared tier requirement.

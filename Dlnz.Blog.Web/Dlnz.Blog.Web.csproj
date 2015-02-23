@@ -62,14 +62,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\highlight-default.css" />
     <Content Include="css\magnific-popup.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="google3f1a7681bfc06cce.html" />
     <Content Include="Gruntfile.js" />
     <Content Include="images\auckland-central.jpg" />
+    <Content Include="images\baremetal-pagespeed-cold.jpg" />
+    <Content Include="images\baremetal-pagespeed-warm.jpg" />
     <Content Include="images\vs2015-Grunt-800.jpg" />
     <Content Include="images\vs2015-Grunt.jpg" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\highlight.pack.js" />
     <Content Include="js\html5shiv.min.js" />
     <Content Include="js\ie10-viewport-bug-workaround.js" />
     <Content Include="js\jquery-1.11.2.min.js" />
