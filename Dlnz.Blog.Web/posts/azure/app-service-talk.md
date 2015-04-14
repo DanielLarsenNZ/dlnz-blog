@@ -1,7 +1,7 @@
 {
     "template": "post",
     "title": "Azure App Service",
-    "description": "Azure App Service, Microsoft’s new Web and Mobile app PaaS offering on Azure.",
+    "description": "Azure App Service combines the previous Azure Websites, Mobile Services and BizTalk Services into one integrated offering and is a major PaaS play by Microsoft Azure, driving Continous Delivery and Development Efficiency.",
     "tags": [ "azure", "paas" ]
 } 
 
@@ -13,7 +13,7 @@ _14th April 2015_
 
 
 ## TL;DR
-App Service combines the previous Azure Websites, Mobile Services and BizTalk Services into one integrated offering and is a major PaaS play by Microsoft Azure that drives Continous Delivery and Development Efficiency.
+Azure App Service combines the previous Azure Websites, Mobile Services and BizTalk Services into one integrated offering and is a major PaaS play by Microsoft Azure, driving Continous Delivery and Development Efficiency.
 
 
 ## Hello Azure App Service
