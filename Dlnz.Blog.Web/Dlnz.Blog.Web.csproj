@@ -122,6 +122,7 @@
     <None Include="js\Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="posts\azure\app-service-talk.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,6 +133,15 @@
   <ItemGroup>
     <Content Include="css\blog.css" />
     <Content Include="images\bilbao.jpg" />
+    <Content Include="posts\azure\images\app-service-on-prem-800.jpg" />
+    <Content Include="posts\azure\images\app-service-on-prem.JPG" />
+    <Content Include="posts\azure\images\logic-app-tiggers-actions-800.jpg" />
+    <Content Include="posts\azure\images\logic-app-tiggers-actions.jpg" />
+    <Content Include="posts\azure\images\new-portal-github-deployment-800.jpg" />
+    <Content Include="posts\azure\images\new-portal-github-deployment.jpg" />
+    <Content Include="posts\azure\images\ninja-cat.jpg" />
+    <Content Include="posts\azure\images\swagger-docs-800.jpg" />
+    <Content Include="posts\azure\images\swagger-docs.jpg" />
     <Content Include="templates\post.dot.html" />
     <Content Include="Web.config" />
   </ItemGroup>
