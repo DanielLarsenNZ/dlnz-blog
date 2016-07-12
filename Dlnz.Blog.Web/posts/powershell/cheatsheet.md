@@ -111,3 +111,37 @@ $filenames = $files | % { $_.FullName }
 
 ### Links
 * Select / map PowerShell: http://stackoverflow.com/a/8909031
+
+## JSON
+
+Here is a cool way to generate JSON objects (thanks petern!). First create the object 
+dynamically and then use the `ConvertTo-JSON` cmdlet:
+
+```PowerShell
+$customer = @{
+    Id = 'abc123'
+    Email = @{
+            Address = 'alice@localtest.me'
+            Verified = $true
+    }
+    PhoneNumbers = ('555-1234', '555-1235', '555-1236')
+}
+
+ConvertTo-Json $customer
+```
+
+Output:
+```JavaScript
+{
+    "Email":  {
+                  "Verified":  true,
+                  "Address":  "alice@localtest.me"
+              },
+    "Id":  "abc123",
+    "PhoneNumbers":  [
+                         "555-1234",
+                         "555-1235",
+                         "555-1236"
+                     ]
+}
+```
