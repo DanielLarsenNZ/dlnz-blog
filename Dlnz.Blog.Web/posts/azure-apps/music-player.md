@@ -10,3 +10,15 @@
 > UWP Backgroup Audio sample: https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundAudio
 
 
+> Introduction to UWP App design: https://msdn.microsoft.com/en-us/windows/uwp/layout/design-and-ui-intro
+
+> Controls and patterns for UWP apps: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/index
+
+> Navigation design basics for UWP apps: https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics
+
+> Command design basics for UWP apps: https://msdn.microsoft.com/en-us/windows/uwp/layout/commanding-basics
+
+> Content design basics for UWP apps: https://msdn.microsoft.com/en-us/windows/uwp/layout/content-basics
+
+> Plan your App: https://msdn.microsoft.com/windows/uwp/get-started/plan-your-app
+
