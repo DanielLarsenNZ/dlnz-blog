@@ -7,6 +7,17 @@
 * **Security Token Server (STS)** – A web service capable of determining user identity (for example: via password credentials) and issuing a Security Token using an authentication/authorization protocol 
 * **Authentication/Authorization** protocol – An agreed way of requesting, issuing, renewing or cancelling a Security Token, for example, WS-Federation, SAML-P, OAuth2 
 
+## Overview
+
+App Service supports five identity providers out of the box: Azure Active Directory, Facebook, Google, Microsoft Account, and Twitter.
+
+It is important to understand the authentication flows and choose the correct one for your application.
+
+> Authentication Scenarios for Azure AD - Application Types and Scenarios - [https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-scenarios/#application-types-and-scenarios](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-scenarios/#application-types-and-scenarios)
+
+> Active Directory Authentication Library for JavaScript (ADAL.JS) [https://github.com/AzureAD/azure-activedirectory-library-for-js/tree/dev](https://github.com/AzureAD/azure-activedirectory-library-for-js/tree/dev)
+
+
 ## OAuth
 OAuth is an Authorization framework defined by [RFC 6749] that allows users to log in to third-party websites using their Microsoft, 
 Twitter, Google, Twitter, Facebook or other provider credentials. Authorization takes place without
@@ -88,12 +99,14 @@ My supplementary notes are as follows:
 
 [RFC 6749]:https://tools.ietf.org/html/rfc6749
 
-## Overview
 
-App Service supports five identity providers out of the box: Azure Active Directory, Facebook, Google, Microsoft Account, and Twitter.
+
+### In App Services
 
 > How authentication works in Azure App Services - 
 > [https://azure.microsoft.com/en-gb/documentation/articles/app-service-authentication-overview/](https://azure.microsoft.com/en-gb/documentation/articles/app-service-authentication-overview/)
+
+
 
 Deferred authorization means that individual controllers / actions can be authorised
 using the `[Authorization]` attribute.

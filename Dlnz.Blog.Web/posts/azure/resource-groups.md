@@ -1,19 +1,18 @@
 # Azure Resource Groups and the Azure Resource Manager
 
-* https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/ - good summary of VM Sizes.
-
+> Good summary of VM Sizes - https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/
 
 > You need Azure PowerShell 1.0. Install from https://azure.microsoft.com/en-us/blog/azps-1-0/
 
-Deploy an application with Azure Resource Manager template: https://azure.microsoft.com/en-us/documentation/articles/resource-group-template-deploy/
-Another good summary of templates: https://azurestack.eu/2015/06/azure-resource-manager-templates-json/
+> Deploy an application with Azure Resource Manager template - https://azure.microsoft.com/en-us/documentation/articles/resource-group-template-deploy/
 
-Scripted installation using ARM https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms/
+> Another good summary of templates - https://azurestack.eu/2015/06/azure-resource-manager-templates-json/
 
-TeamCity guidance: http://www.markermetro.com/2015/02/technical/team-city-with-azure-virtual-machines/
+> Scripted installation using ARM - https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms/
 
-RM VMs cannot be backed up using Azure Backup (yet) so are best used for immutable infrastructure.
-https://feedback.azure.com/forums/258995-azure-backup-and-scdpm/suggestions/8369907-azure-backup-to-support-iaas-vm-v2?page=2&per_page=20
+> TeamCity guidance - http://www.markermetro.com/2015/02/technical/team-city-with-azure-virtual-machines/
+
+> Create a Windows virtual machine with a Resource Manager template - https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-ps-template/
 
 
 ## Starting an Azure VM with the Azure CLI
