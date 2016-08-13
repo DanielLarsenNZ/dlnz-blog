@@ -15,3 +15,10 @@
 > Load Balancer Overview - https://azure.microsoft.com/en-us/documentation/articles/load-balancer-overview/
 
 > Configure an application gateway for SSL offload by using Azure Resource Manager - https://azure.microsoft.com/en-us/documentation/articles/application-gateway-ssl-arm/
+
+Careful, Gateway SKUs get pricey:
+
+> https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/
+
+And Application Gateways are not free:
+> https://azure.microsoft.com/en-us/pricing/details/application-gateway/
