@@ -22,3 +22,5 @@ Careful, Gateway SKUs get pricey:
 
 And Application Gateways are not free:
 > https://azure.microsoft.com/en-us/pricing/details/application-gateway/
+
+> Visualise your ARM Templates : http://armviz.io/editor

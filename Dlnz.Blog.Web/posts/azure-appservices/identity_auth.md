@@ -36,6 +36,10 @@ using a browser and [Postman](https://www.getpostman.com/) (for example). There 
 in [Authorize access to web applications using OAuth 2.0 and Azure Active Directory](https://azure.microsoft.com/en-us/documentation/articles/active-directory-protocols-oauth-code/).
 My supplementary notes are as follows:
 
+> Authorisation flows: <https://tools.ietf.org/html/rfc6749#section-4>
+> A guide to OAuth 2.0 Grants: <http://alexbilbie.com/guide-to-oauth-2-grants/>
+
+
 ### Create an API App:
 
 1. Create an ASP.NET Azure API App and deploy it to Azure.
@@ -151,3 +155,21 @@ Logic Apps.
 
 > Using your custom API hosted on App Service with Logic apps - [https://azure.microsoft.com/en-gb/documentation/articles/app-service-logic-custom-hosted-api/](https://azure.microsoft.com/en-gb/documentation/articles/app-service-logic-custom-hosted-api/)
 
+## Microservice Security
+
+<!-- Really good overview in a Spring demo: https://www.youtube.com/watch?v=USMl2GNg2r0 -->
+
+
+
+### Common concerns
+
+* Bottleneck of a Central user store
+* Single sign on
+* Statelessness
+* API / App should not accept or pass user credentials.
+* Fine-grained authorization
+* Interop with non-browser clients
+
+### OAuth2 + OpenId Connect
+
+#### Authorization Code Flow

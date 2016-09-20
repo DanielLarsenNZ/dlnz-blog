@@ -8,3 +8,4 @@ and is a seamless experience.
 
 > Hello world for .NET Core on Debian in a container : https://medium.com/trafi-tech-beat/running-net-core-on-docker-c438889eb5a#.w72qh8qkg
 
+> Dockerizing a Node.js web app : https://nodejs.org/en/docs/guides/nodejs-docker-webapp/

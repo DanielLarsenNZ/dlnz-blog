@@ -46,3 +46,4 @@ azure vm start TeamCity teamcity05
 
 ## App Services and Cloud Services
 Great overview of the fundamentals: https://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/
+
