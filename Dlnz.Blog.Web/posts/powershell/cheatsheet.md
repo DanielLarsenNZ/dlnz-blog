@@ -32,11 +32,11 @@ $a -join ','
 ```
 
 `ArrayList` is a handy type for manipulating arrays:
+
 ```PowerShell
 [System.Collections.ArrayList]$a = "one", "two", "three"
 $a.AddRange(("four", "five", "six"))
 ```
-
 
 > Watch out for `Get-ChildItem` - it will return a single File if one item found, or and Array of File if
 > more than one item found. To force returning an array every time, surround with an array syntax: `@( )`
@@ -47,11 +47,12 @@ $a.AddRange(("four", "five", "six"))
 ```
 
 ### Links
+
 * Adding/removing items from an Array: http://www.jonathanmedd.net/2014/01/adding-and-removing-items-from-a-powershell-array.html
 * Get-ChildItem in PowerShell: http://www.kanasolution.com/2010/12/get-childitem-in-powershell/
 
-
 ## foreach
+
 Some traps for young players here... `ForEach-Object` and `foreach()` are different.
 
 Use `foreach()` like C# or JavaScript, e.g.
@@ -82,14 +83,14 @@ if ($bakfile -ne $null){
 }
 
 # this will exit the script
-$files | ForEach-Object { 
-    Write-Verbose $file
+$files | ForEach-Object {
+    Write-Verbose $file # THIS IS WRONG?
     break
 }
 
 # so will this!
 $files | foreach {
-    Write-Verbose $file
+    Write-Verbose $file # THIS IS WRONG?
     break
 }
 ```
@@ -97,11 +98,13 @@ $files | foreach {
 In PowerShell 4 there is a ForEach method on a Collection.
 
 ### Links
+
 * break statement : http://ss64.com/ps/break.html
 * ForEach method: http://ss64.com/ps/foreach-method.html
 
 
 ## map
+
 `%` is shorthand for `foreach` so you can map quite elegantly like this:
 
 ```PowerShell
@@ -110,6 +113,7 @@ $filenames = $files | % { $_.FullName }
 ```
 
 ### Links
+
 * Select / map PowerShell: http://stackoverflow.com/a/8909031
 
 ## JSON
@@ -144,4 +148,18 @@ Output:
                          "555-1236"
                      ]
 }
+```
+
+## `copy con`
+
+```powershell
+$content = @'
+{
+    "how": {
+                "cool": "is PowerShell!"
+            }
+}
+'@
+
+Set-Content -Value $content -Encoding UTF8 -Path C:\ProgramData\Docker\abc123.json
 ```
